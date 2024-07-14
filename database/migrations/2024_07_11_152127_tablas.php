@@ -30,18 +30,6 @@ return new class extends Migration
             $table->string('nombre_departamento');
             $table->string('codigo_departamento');
             $table->timestamps();
-            Schema::create('generos', function (Blueprint $table) {
-            $table->id();
-            $table->string('categoria_genero');
-            $table->timestamps();
-        });
-        });
-
-
-        Schema::create('tipo_terceros', function (Blueprint $table) {
-            $table->id();
-            $table->string('categoria_tercero');
-            $table->timestamps();
         });
 
         Schema::create('generos', function (Blueprint $table) {
@@ -50,6 +38,11 @@ return new class extends Migration
             $table->timestamps();
         });
 
+        Schema::create('tipo_terceros', function (Blueprint $table) {
+            $table->id();
+            $table->string('categoria_tercero');
+            $table->timestamps();
+        });
 
         Schema::create('terceros', function (Blueprint $table) {
             $table->id();
@@ -90,8 +83,8 @@ return new class extends Migration
             $table->integer('nit');
             $table->string('objeto_social');
             $table->timestamps();
-            $table->unsignedBigInteger('tercero_id'); // Cambiar el nombre a tercero_id para evitar duplicados
-            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade'); // Definir la relación correcta
+            $table->unsignedBigInteger('tercero_id');
+            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('productos', function (Blueprint $table) {
@@ -101,9 +94,9 @@ return new class extends Migration
             $table->integer('porcentaje_ganancia');
             $table->string('color_producto');
             $table->float('peso_producto');
-            $table->timestamps();
             $table->dateTime('fecha_vencimento');
             $table->integer('tamaño');
+            $table->timestamps();
         });
 
         Schema::create('control_devoluciones', function (Blueprint $table) {
@@ -117,9 +110,10 @@ return new class extends Migration
             $table->string('nombre_movimiento');
             $table->string('descripcion_movimiento');
             $table->timestamps();
-            //Relación 1:M con tabla control devoluciones
+
+            // Relación 1:M con tabla control devoluciones
             $table->unsignedBigInteger('control_devolucion_id');
-            $table->foreignId('control_devolucion_id')->references('id')->on('control_devoluciones')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('control_devolucion_id')->references('id')->on('control_devoluciones')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('inventarios', function (Blueprint $table) {
@@ -138,25 +132,17 @@ return new class extends Migration
             $table->float('precio_total_salidas');
             $table->timestamps();
 
-            //relacion 1:M con la tabla tercero
+            // Relación 1:M con la tabla tercero
             $table->unsignedBigInteger('tercero_id');
-            $table->foreignId('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
-            //relación 1:M con la tabla productos
+            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+
+            // Relación 1:M con la tabla productos
             $table->unsignedBigInteger('producto_id');
-            $table->foreignId('producto_id')->references('id')->on('productos')->onDelete('cascade')->onUpdate('cascade');
-            //Relación 1:M con tabla movimiento
+            $table->foreign('producto_id')->references('id')->on('productos')->onDelete('cascade')->onUpdate('cascade');
+
+            // Relación 1:M con tabla movimiento
             $table->unsignedBigInteger('movimiento_id');
-            $table->foreignId('movimiento_id')->references('id')->on('movimientos')->onDelete('cascade')->onUpdate('cascade');
-
-        });
-
-        Schema::create('estado_de_pedidos', function (Blueprint $table) {
-            $table->id();
-            $table->string('comentario_pedido'); //es el estado del pedido (entregado, en camino, etc...)
-            $table->timestamps();
-            //Relación 1:1 con cabeza de factura
-            $table->unsignedBigInteger('cabeza_de_factura_id');
-            $table->foreignId('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('movimiento_id')->references('id')->on('movimientos')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('control_de_comentarios', function (Blueprint $table) {
@@ -168,13 +154,14 @@ return new class extends Migration
 
         Schema::create('calificacion_servicios', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_servicio',45);
+            $table->string('tipo_servicio', 45);
             $table->integer('calificacion');
             $table->string('comentario_servicio');
-            //Relación 1:M con control de comentarios
-            $table->unsignedBigInteger('control_de_comentarios_id');
-            $table->foreignId('control_de_comentarios_id')->references('id')->on('control_de_comentarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+
+            // Relación 1:M con control de comentarios
+            $table->unsignedBigInteger('control_de_comentarios_id');
+            $table->foreign('control_de_comentarios_id')->references('id')->on('control_de_comentarios')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('cabeza_de_facturas', function (Blueprint $table) {
@@ -182,15 +169,28 @@ return new class extends Migration
             $table->float('total');
             $table->dateTime('fecha_compra');
             $table->timestamps();
-            //relacion 1:M con la tabla person
+
+            // Relación 1:M con la tabla tercero
             $table->unsignedBigInteger('tercero_id');
-            $table->foreignId('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
-            //relacion 1:M con la tabla empresa
+            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+
+            // Relación 1:M con la tabla empresa
             $table->unsignedBigInteger('empresa_id');
-            $table->foreignId('empresa_id')->references('id')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
-            //relacion 1:M con la tabla empresa
+            $table->foreign('empresa_id')->references('id')->on('empresas')->onDelete('cascade')->onUpdate('cascade');
+
+            // Relación 1:M con la tabla calificacion_servicios
             $table->unsignedBigInteger('calificacion_servicio_id');
-            $table->foreignId('calificacion_servicio_id')->references('id')->on('calificacion_servicios')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('calificacion_servicio_id')->references('id')->on('calificacion_servicios')->onDelete('cascade')->onUpdate('cascade');
+        });
+
+        Schema::create('estado_de_pedidos', function (Blueprint $table) {
+            $table->id();
+            $table->string('comentario_pedido');
+            $table->timestamps();
+
+            // Relación 1:1 con cabeza de factura
+            $table->unsignedBigInteger('cabeza_de_factura_id');
+            $table->foreign('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('cuerpo_de_facturas', function (Blueprint $table) {
@@ -198,21 +198,24 @@ return new class extends Migration
             $table->integer('cantidad_productos');
             $table->integer('total_productos');
             $table->timestamps();
-            //Relación 1:M con la tabla inventario
+
+            // Relación 1:M con la tabla inventario
             $table->unsignedBigInteger('inventario_id');
-            $table->foreignId('inventario_id')->references('id')->on('inventarios')->onDelete('cascade')->onUpdate('cascade');
-             //Relación 1:1 con la tabla cabeza_factura
+            $table->foreign('inventario_id')->references('id')->on('inventarios')->onDelete('cascade')->onUpdate('cascade');
+
+            // Relación 1:1 con la tabla cabeza_factura
             $table->unsignedBigInteger('cabeza_de_factura_id');
-            $table->foreignId('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('sistema_de_pagos', function (Blueprint $table) {
             $table->id();
-            $table->string('forma_pago',45); //Es para elegir la forma de pago.
+            $table->string('forma_pago', 45);
             $table->timestamps();
-            //Relación 1:M con cabeza factura
+
+            // Relación 1:M con cabeza factura
             $table->unsignedBigInteger('cabeza_de_factura_id');
-            $table->foreignId('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('cabeza_de_factura_id')->references('id')->on('cabeza_de_facturas')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('tipo_de_pqrs', function (Blueprint $table) {
@@ -225,16 +228,15 @@ return new class extends Migration
         Schema::create('catalogos', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_produto');
-
-            //relación 1:M con la tabla inventario
-            $table->unsignedBigInteger('inventario_id');
-            $table->foreignId('inventario_id')->references('id')->on('inventarios')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
+
+            // Relación 1:M con la tabla inventario
+            $table->unsignedBigInteger('inventario_id');
+            $table->foreign('inventario_id')->references('id')->on('inventarios')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('tercero_tipo_pqrs', function (Blueprint $table) {
             $table->id();
-            //Asignacion de claves foraneas
             $table->unsignedBigInteger('tercero_id');
             $table->unsignedBigInteger('tipo_pqrs_id');
             $table->timestamps();
@@ -250,22 +252,22 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('tipo_documentos');
+        Schema::dropIfExists('ciudads');
         Schema::dropIfExists('departamentos');
         Schema::dropIfExists('generos');
         Schema::dropIfExists('tipo_terceros');
-        Schema::dropIfExists('ciudads');
         Schema::dropIfExists('terceros');
         Schema::dropIfExists('empresas');
         Schema::dropIfExists('productos');
+        Schema::dropIfExists('control_devoluciones');
         Schema::dropIfExists('movimientos');
         Schema::dropIfExists('inventarios');
-        Schema::dropIfExists('control_devoluciones');
+        Schema::dropIfExists('estado_de_pedidos');
+        Schema::dropIfExists('control_de_comentarios');
+        Schema::dropIfExists('calificacion_servicios');
         Schema::dropIfExists('cabeza_de_facturas');
         Schema::dropIfExists('cuerpo_de_facturas');
         Schema::dropIfExists('sistema_de_pagos');
-        Schema::dropIfExists('estado_de_pedidos');
-        Schema::dropIfExists('calificacion_servicios');
-        Schema::dropIfExists('control_de_comentarios');
         Schema::dropIfExists('tipo_de_pqrs');
         Schema::dropIfExists('catalogos');
         Schema::dropIfExists('tercero_tipo_pqrs');
