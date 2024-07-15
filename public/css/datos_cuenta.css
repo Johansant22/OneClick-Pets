@@ -84,10 +84,6 @@ nav ul {
     color: white;
   }
 
-  .img-inicio {
-    height: 500px;
-    width: 1368px;
-}
 
 
   footer {
@@ -124,4 +120,53 @@ nav ul {
     width: 30px;
     height: auto;
     margin-left: 15px;
+}
+
+.datos-cuenta {
+    background-color: #fffaf1; /* Cambia este color según tu preferencia */
+    padding: 20px;
+    max-width: 500px; /* Ajusta el ancho máximo deseado */
+    margin: 0 auto; /* Centra horizontalmente */
+    margin-top: 20px; /* Ajusta el margen superior según sea necesario */
+    border: 1px solid #ccc; /* Borde para resaltar el contenedor */
+}
+
+.datos-cuenta form {
+    text-align: left; /* Alinea el contenido del formulario a la izquierda */
+}
+
+.datos-cuenta h3 {
+    margin-top: 0; /* Elimina el margen superior del título */
+}
+
+.datos-cuenta label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.datos-cuenta input,
+.datos-cuenta select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.datos-cuenta input[type="submit"] {
+    background-color: #fca311;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos adicionales para el campo de fecha de expedición */
+.fecha-expedicion {
+    display: flex;
+}
+
+.fecha-expedicion input {
+    flex: 1; /* Los campos de entrada ocupan el mismo espacio dentro del contenedor */
+    margin-right: 10px; /* Espacio entre los campos de entrada */
 }

@@ -84,11 +84,13 @@ nav ul {
     color: white;
   }
 
-  .img-inicio {
-    height: 500px;
-    width: 1368px;
+  .soporte {
+    width: 50px;
+    height: 50px;
+    right:10px;
+    position: absolute;
+    top:510px;
 }
-
 
   footer {
     background-color: black;
@@ -124,4 +126,76 @@ nav ul {
     width: 30px;
     height: auto;
     margin-left: 15px;
+}
+
+.ContenedorIma {
+    position: absolute;
+    margin-top: 2%;
+    left: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 350px;
+    border: 1px solid black;
+    background-color: #fffaf1;
+}
+
+.producto {
+    height: 330px;
+    width: 330px;
+}
+
+.Descripcion {
+    position: absolute;
+    left: 30%;
+    align-items: center;
+    text-align: left;
+}
+
+.Descripcion input {
+    font-size: 15px;
+    width: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.boton1, .boton2 {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height:40px;
+    background-color: #FCA311;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.boton1:hover, .boton2:hover{
+    background-color: #FDB949;
+}
+
+.opinionesP {
+    position: absolute;
+    left: 70%;
+    align-items: center;
+    text-align: left;
+}
+
+.comentario {
+    color: blue;
+}
+
+.perfilO {
+    display: flex;
+    justify-content: left;
+}
+
+.perfilO img{
+    margin-top: 15px;
+    width: 35px;
+    height: 35px;
 }

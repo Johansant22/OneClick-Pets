@@ -84,10 +84,37 @@ nav ul {
     color: white;
   }
 
-  .img-inicio {
-    height: 500px;
-    width: 1368px;
+  body {
+	font-family: Arial, sans-serif;
 }
+
+.container {
+	max-width: 250px;
+	margin: 100px auto;
+	padding: 60px;
+	background-color: #fed188;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+	text-align: center;
+
+  
+}
+.title {
+  font-size: 2em; 
+  margin-bottom: 40px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Espacio entre cada grupo de formulario */
+}
+label {
+  display: block; /* Para que cada etiqueta esté en una línea separada */
+  margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+}
+input[type="text"] {
+  width: 50%;
+  padding: 5px;
+  }
+  
 
 
   footer {
@@ -98,13 +125,12 @@ nav ul {
     height: 1px;
     bottom: 0;
     width: 100%;
-
+}
     .pie-pag {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
-    }
 }
 
 .pie-pag p {

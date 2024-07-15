@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
-
     <title>Inicio</title>
+    <link rel="stylesheet" href="{{ asset('css/inicio.css') }}">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
 </head>
 <body>
+    
     <header>
-        <img src="imagenes/Logo.png" alt="Logo OneClick Pets" class="logo-header">
-    </header>
-<main>
-    <header>
-        <img src="imagenes/Logo.png" alt="Logo OneClick Pets" class="logo-header">
-
+        <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
+        
         <div class="ico1">
-        <img src="imagenes/perfil.png" alt="perfil" class="perfil">
-        <img src="imagenes/carritocompras.png" alt="carritocompras" class="carrito">
-        <img src="imagenes/ajustes.png" alt="ajustes" class="ajustes">
+        <img src="images/perfil.png" alt="perfil" class="perfil">
+        <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
+        <img src="images/ajustes.png" alt="ajustes" class="ajustes">
         </div>
 
         <div class="b11">
@@ -40,6 +37,7 @@
           </nav>
     </header>
 
+    <img src="images/inico.jpg" class="img-inicio">
 
 
 
@@ -50,10 +48,18 @@
     </div>
 
     <div class="redes">
-        <img src="imagenes/facebook.png" alt="Facebook" class="facebook">
-        <img src="imagenes/x.png" alt="X" class="TX">
-        <img src="imagenes/youtube.png" alt="Youtube" class="youtube">
-        <img src="imagenes/instagram.png" alt="Instagram" class="instagram">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="facebook">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="{{ asset('images/x.png') }}" alt="X" class="TX">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="{{ asset('images/youtube.png') }}" alt="Youtube" class="youtube">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="instagram">
+        </a>
     </div>
     </footer>
 

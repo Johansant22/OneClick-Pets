@@ -84,10 +84,6 @@ nav ul {
     color: white;
   }
 
-  .img-inicio {
-    height: 500px;
-    width: 1368px;
-}
 
 
   footer {
@@ -124,4 +120,44 @@ nav ul {
     width: 30px;
     height: auto;
     margin-left: 15px;
+}
+
+.verificar_cuenta {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #fffaf1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+   margin-top: 160px;
+}
+
+.verificar_cuenta h2 {
+    margin-top: 0;
+}
+
+.images,
+.additional-action {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.images img,
+.additional-action img {
+    max-width: 100px;
+    height: auto;
+    width: 50px;
+    vertical-align: middle;
+}
+
+.images span,
+.additional-action span {
+    font-size: 16px;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
 }

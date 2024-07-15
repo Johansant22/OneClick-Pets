@@ -1,0 +1,244 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: white;
+    overflow-x: hidden;
+}
+
+
+header{
+    background-color: black;
+    padding: 40px;
+    position: relative;
+}
+
+.logo-header {
+height: 100%;
+width: auto;
+position: absolute;
+left: 0%;
+top: 0%;
+border-radius: 40px;
+}
+
+.ico1 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+
+.perfil, .carrito, .ajustes {
+    width: 30px;
+    height: auto;
+    margin-left: 25px;
+}
+
+.b11 {
+    margin-left: 150px;
+    margin-top: -35px;
+}
+
+.barrabusqueda {
+    padding: 5px; 
+    border: 2px solid white; 
+    background-color: white; 
+    color:black; 
+    width: 300px; 
+    margin-top: 5px;
+    border-radius: 5px;
+}
+
+nav {
+    position: absolute;
+    bottom: 0;
+    left: 190px;
+    width: auto;
+    border: 2px black solid;
+    border-radius: 10px;
+    background-color: white;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    float: left;
+    border: 1px black solid;
+  }
+
+  nav li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 5px 16px;
+    text-decoration: none;
+  }
+
+  nav li a:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .soporte {
+    width: 50px;
+    height: 50px;
+    right:10px;
+    position: absolute;
+    top:510px;
+}
+
+  footer {
+    background-color: black;
+    padding: 40px;
+    position: absolute;
+    color: white;
+    height: 1px;
+    bottom: 0;
+    width: 100%;
+
+    .pie-pag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.pie-pag p {
+   margin: 0;
+   margin-left: 10px;
+   font-size: 14px;
+}
+
+.redes {
+ display: flex;
+ margin-top: -15px;
+ justify-content: end;
+ margin-right: 50px;
+}
+
+.facebook, .instagram, .youtube, .TX {
+    width: 30px;
+    height: auto;
+    margin-left: 15px;
+}
+
+.Titulo {
+    margin-top: -2px;
+}
+
+.GCompras {
+    text-align: center;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    border-radius: 10px;
+    width: 15%;
+    height: 64%;
+    padding: 20px;
+    border: 1px solid black;
+    background-color: #fffaf1;
+}
+
+.Gcom1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   width:120%;
+   height: 50px;
+   border-radius: 10px;
+   background-color: black;
+   color: white;
+   position: relative;
+   margin-top: -21px;
+   right: 20px;
+}
+
+.Gcom2, .Gcom3, .Gcom4,
+.Gcom5, .Gcom5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:40px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.metodos {
+    display: flex;
+    margin-top: -15px;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.mastercard, .paypal, .visa {
+    width: 30px;
+    height: auto;
+    margin-left: 50px;
+}
+
+.Gcom6, .Gcom7 {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:40px;
+    background-color: #FCA311;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.Gcom6:hover, .Gcom7:hover {
+    background-color: #FDB949;
+}
+
+.Informacion {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    height:20px;
+    width: 75%;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: #fffaf1;
+    margin-top: -15px;
+    margin-left: 10px;
+}
+
+.Item1, .Item2, .Item3 {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 75%;
+    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+.Item1, .Item2 {
+ border-bottom: 1px solid black;
+ margin-top: 20px;
+ padding-bottom: 5px;
+}
+
+.Articulos input {
+    font-size: 15px;
+    width: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.basura{
+    width: 30px;
+    height: 30px;
+}

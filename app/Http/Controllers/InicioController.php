@@ -6,10 +6,12 @@ use Illuminate\Http\Request;
 
 class InicioController extends Controller
 {
+    //public function index(){
+       // return view('Pagina_inicio.inicio');
+   // }
+
     public function index(){
-        return view('Pagina_inicio.inicio');
+        return view('RegistroUsuario.RegUsuario');
     }
-
-
 
 }
