@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\InicioController;
+use App\Models\Tercero;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,3 +11,5 @@ Route::get('/', function () {
 
 
 Route::resource('inicio', InicioController::class)->names('inicio');
+Route::resource('registro', Tercero::class)->names('registro');
+
