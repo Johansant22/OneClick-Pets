@@ -11,7 +11,7 @@ class InicioController extends Controller
    // }
 
     public function index(){
-        return view('RegistroUsuario.RegUsuario');
+        return view('Catalogo.Catalogo');
     }
 
 }

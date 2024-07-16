@@ -12,13 +12,13 @@
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
         
         <div class="ico1">
-        <img src="imagenes/perfil.png" alt="perfil" class="perfil">
+        <img src="images/perfil.png" alt="perfil" class="perfil">
         
         <a href="CarroCompras.html">
-        <img src="imagenes/carritocompras.png" alt="carritocompras" class="carrito">
+        <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
         </a>
 
-        <img src="imagenes/ajustes.png" alt="ajustes" class="ajustes">
+        <img src="images/ajustes.png" alt="ajustes" class="ajustes">
         </div>
 
         <div class="b11">
@@ -61,9 +61,9 @@
             <h4 class="Gcom5">Total: $000.000</h4>
 
             <div class="metodos">
-                <img src="imagenes/mastercard.png" class="mastercard">
-                <img src="imagenes/paypal.png" class="paypal">
-                <img src="imagenes/visa.png" class="visa">
+                <img src="images/mastercard.png" class="mastercard">
+                <img src="images/paypal.png" class="paypal">
+                <img src="images/visa.png" class="visa">
             </div>
 
             <h3 class="Gcom6">Generar Compra</h3>
@@ -73,36 +73,36 @@
         <div class="Articulos">
             <div class="Item1">
                 <h4>1</h4>
-                <img src="imagenes/producto.png">
+                <img src="images/producto.png">
                 <h4>Lorem ipsum dolor sit amet</h4>
                 <h4>$00.00</h4>
                 <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                 <h4>Total :$000.000</h4>
-                <img src="imagenes/basura.png" class="basura">
+                <img src="images/basura.svg" class="basura">
             </div>
 
             <div class="Item2">
                 <h4>2</h4>
-                <img src="imagenes/producto.png">
+                <img src="images/producto.png">
                 <h4>Lorem ipsum dolor sit amet</h4>
                 <h4>$00.00</h4>
                 <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                 <h4>Total :$000.000</h4>
-                <img src="imagenes/basura.png" class="basura">
+                <img src="images/basura.svg" class="basura">
             </div>
 
             <div class="Item3">
                 <h4>3</h4>
-                <img src="imagenes/producto.png">
+                <img src="images/producto.png">
                 <h4>Lorem ipsum dolor sit amet</h4>
                 <h4>$00.00</h4>
                 <input type="number" id="cantidad" name="cantidad" min="1" value="1">
                 <h4>Total :$000.000</h4>
-                <img src="imagenes/basura.png" class="basura">
+                <img src="images/basura.svg" class="basura">
             </div>
         </div>
 
-        <img src="imagenes/Soporte.png" class="soporte">
+        <img src="images/Soporte.png" class="soporte">
     </main>
 
     <footer>
@@ -111,10 +111,18 @@
     </div>
 
     <div class="redes">
-        <img src="imagenes/facebook.png" alt="Facebook" class="facebook">
-        <img src="imagenes/x.png" alt="X" class="TX">
-        <img src="imagenes/youtube.png" alt="Youtube" class="youtube">
-        <img src="imagenes/instagram.png" alt="Instagram" class="instagram">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="facebook">
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+            <img src="{{ asset('images/x.png') }}" alt="X" class="TX">
+        </a>
+        <a href="https://www.youtube.com" target="_blank">
+            <img src="{{ asset('images/youtube.png') }}" alt="Youtube" class="youtube">
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+            <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="instagram">
+        </a>
     </div>
     </footer>
 </body>

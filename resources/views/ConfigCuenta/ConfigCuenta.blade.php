@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuración de usuario</title>
-    <link rel="stylesheet" href="css/configuracion_usuario.css">
+    <link rel="stylesheet" href="css/ConfigUsuario.css">
     <link rel="icon" type="image/png" href="imagenes/favicon.png" />
 
 </head>
 <body>
-    
     <header>
-        <img src="imagenes/Logo.png" alt="Logo OneClick Pets" class="logo-header">
+        <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">   <! -- Enlazar -->
         
         <div class="ico1">
-        <img src="imagenes/perfil.png" alt="perfil" class="perfil">
-        <img src="imagenes/carritocompras.png" alt="carritocompras" class="carrito">
-        <img src="imagenes/ajustes.png" alt="ajustes" class="ajustes">
+        <img src="images/perfil.png" alt="perfil" class="perfil">      <! -- Enlazar -->
+        <img src="images/carritocompras.png" alt="carritocompras" class="carrito">    <! -- Enlazar -->
+        <img src="images/ajustes.png" alt="ajustes" class="ajustes">              <! -- Enlazar -->
         </div>
 
         <div class="b11">
@@ -25,52 +24,61 @@
 
         <nav>
             <ul>
-              <li><a href="#">Catálogo</a></li>
-              <li><a href="#">Categoría</a></li>
-              <li><a href="#">Compras</a></li>
-              <li><a href="#">Vender</a></li>
-              <li><a href="#">Ofertas</a></li>
-              <li><a href="#">Historial</a></li>
-              <li><a href="#">Mis Favoritos</a></li>
-              <li><a href="#">Ayuda/PQRS</a></li>
+              <li><a href="#">Catálogo</a></li>          <! -- Enlazar -->
+              <li><a href="#">Categoría</a></li>          <! -- Enlazar -->
+              <li><a href="#">Compras</a></li>         <! -- Enlazar -->
+              <li><a href="#">Vender</a></li>            <! -- Enlazar -->
+              <li><a href="#">Ofertas</a></li>           <! -- Enlazar -->
+              <li><a href="#">Historial</a></li>           <! -- Enlazar -->
+              <li><a href="#">Mis Favoritos</a></li>            <! -- Enlazar -->
+              <li><a href="#">Ayuda/PQRS</a></li>               <! -- Enlazar -->
             </ul>
           </nav>
     </header>
     
-<div class="info-perfil">
-    <h2>Configuración de usuario</h2>
+
+
+    <div class="infoConfig">
+    <h2>Configuración Cuenta</h2>
+    </div>
+
+<div class="info-perfil">               <! -- Enlazar -->
+    <h2 class="tit-1">Nombre usuario</h2>
     <div>
-        <img src="imagenes/cta personal.png" alt="Perfil" class="perfil">
-        <p>nombre usuario</p>
+        <img src="images/cta personal.png" alt="Perfil" class="perfil11">
+        <div class="cont-1">
+        <p>ejemplo@gmail.com
+        </div>
     </div>
 </div>
 
-<div class="actualizar-info">
+<div class="act-info">
     <div>
-        <a href="datos_cuenta.html">
-            <img src="imagenes/cta personal.png" alt="Datos de cuenta" class="datos-cuenta">
-        <div>
-            <h3>Datos de cuenta</h3>
-            <p>Información de tu documento de identidad, dirección y ocupación</p>
-        </div>
-        </a>
-        
+            <img src="images/cta personal.png" alt="Datos de cuenta" class="perfil22">
+            <h3 class="dtcuenta">Datos de cuenta</h3>
+            <p class="inf-cuenta">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est amet alias reprehenderit? Iure vero id hic vitae quibusdam libero excepturi.</p>    
     </div>
+
     <div>
-        <img src="imagenes/tarjeta.png" alt="Tarjetas" class="tarjeta">
+        <img src="images/tarjeta.svg" alt="Tarjetas" class="tarjeta">
         <div>
-            <h3>Tarjetas</h3>
-            <p>Tarjetas guardadas en tu cuenta</p>
+            <h3 class="dt-tarjeta">Tarjetas</h3>
+            <p class="inf-tarjeta">Tarjetas guardadas en tu cuenta</p>
         </div>
     </div>
+
     <div>
-        <img src="imagenes/candado.png" alt="Seguridad" class="seguridad">
+        <img src="images/candado.png" alt="Seguridad" class="seguridad">
         <div>
-            <h3>Seguridad</h3>
-            <p>Configuraciones de seguridad de tu cuenta</p>
+            <h3 class="dt-seg">Seguridad</h3>
+            <p class="inf-seg">Configuraciones de seguridad de tu cuenta</p>
         </div>
     </div>
 </div>
+
+
+
+
 <div class="menu-opciones">
     <h2>Cambiar rol</h2>
     <select>
@@ -79,18 +87,27 @@
     </select>
 </div>
 
-    <footer>
-        <div class="pie-pag">
-        <p>&copy; Copyrigth 2022 | OneClick Pets <br>Información legal | Politicas de privacidad</p>
-    </div>
+<img src="images/soporte.png" class="soporte">
 
-    <div class="redes">
-        <img src="imagenes/facebook.png" alt="Facebook" class="facebook">
-        <img src="imagenes/x.png" alt="X" class="TX">
-        <img src="imagenes/youtube.png" alt="Youtube" class="youtube">
-        <img src="imagenes/instagram.png" alt="Instagram" class="instagram">
-    </div>
-    </footer>
+<footer>
+    <div class="pie-pag">
+    <p>&copy; Copyrigth 2022 | OneClick Pets <br>Información legal | Politicas de privacidad</p>
+</div>
 
+<div class="redes">
+    <a href="https://www.facebook.com" target="_blank">
+        <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="facebook">
+    </a>
+    <a href="https://www.twitter.com" target="_blank">
+        <img src="{{ asset('images/x.png') }}" alt="X" class="TX">
+    </a>
+    <a href="https://www.youtube.com" target="_blank">
+        <img src="{{ asset('images/youtube.png') }}" alt="Youtube" class="youtube">
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+        <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="instagram">
+    </a>
+</div>
+</footer>
 </body>
 </html>

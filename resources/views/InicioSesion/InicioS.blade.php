@@ -9,45 +9,62 @@
 </head>
 <body>
     <header>
-        <img src="imagenes/Logo.png" alt="Logo OneClick Pets" class="logo-header">
+        <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">  <! -- Enlazar -->
+
     </header>
 <main>
     <div class="container">
-        <h1>INICIAR SESION</h1>
+        <h1>INICIAR SESIÓN</h1>
         <action="/login" method="post">
             
-            <label class="correo" for="email">Correo Electronico*</label><br>
+            <label for="email">Correo Electronico*</label><br>
             <input type="email" id="email" name="email" required><br> <br>
-            <label class="correo" for="password">Contraseña*</label><br>
-            <input class="passwordIni" type="password" id="password" name="password" required><br>
+            <label for="password">Contraseña*</label><br>
+            <input type="password" id="password" name="password" required><br>
             <input type="checkbox" id="remember" name="remember">
             <label for="remember">Recordar Contraseña</label><br>
         </form>
     
         <div class="BotonesIni">
-        <button class="button1">iniciar sesion</button>
-        <button class="button2">crear cuenta</button>
+        <button class="button1">Iniciar Sesión</button> <! -- Enlazar -->
+        <button class="button2">Crear Cuenta</button>   <! -- Enlazar -->
         </div>
         
     
-        <p class="texto_ini">iniciar con:</p>
+        <p class="texto_ini">Iniciar con:</p>
     
-    <div class="20px !importantenedorRed">
+    <div class="Icon33">
     
-    <img src="imagenes/faceInicio.png" class="FaceI">
-    <img src="imagenes/gmail-Inicio.png" class="email-ini">
+        <a href="https://www.facebook.com">
+            <img src="images/faceInicio.png" class="FaceI" alt="Registrarse con Facebook">
+        </a>
+        <a href="https://accounts.google.com/">
+            <img src="images/gmail-Inicio.png" class="email-ini" alt="Registrarse con Gmail">
+        </a>
     </div>
-    
-
-    
 </main>
 
-<footer>
-        <div class="pie-pag">
-        <p>&copy; Copyrigth 2022 | OneClick Pets <br> Información legal | Politicas de privacidad
-        </p> 
-    </div>
 
-    </footer>
+<img src="images/soporte.png" class="soporte">
+<footer>
+    <div class="pie-pag">
+    <p>&copy; Copyrigth 2022 | OneClick Pets <br>Información legal | Politicas de privacidad</p>
+</div>
+
+<div class="redes">
+    <a href="https://www.facebook.com" target="_blank">
+        <img src="{{ asset('images/facebook.png') }}" alt="Facebook" class="facebook">
+    </a>
+    <a href="https://www.twitter.com" target="_blank">
+        <img src="{{ asset('images/x.png') }}" alt="X" class="TX">
+    </a>
+    <a href="https://www.youtube.com" target="_blank">
+        <img src="{{ asset('images/youtube.png') }}" alt="Youtube" class="youtube">
+    </a>
+    <a href="https://www.instagram.com" target="_blank">
+        <img src="{{ asset('images/instagram.png') }}" alt="Instagram" class="instagram">
+    </a>
+</div>
+</footer>
 </body>
 </html>

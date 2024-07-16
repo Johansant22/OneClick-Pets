@@ -8,7 +8,7 @@
 </head>
 <body>
     <header> 
-        <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header"> 
+        <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header"> <! -- Enlazar Home -->
     </header>
 
     <div class="container">
@@ -35,11 +35,15 @@
             </form>
 
         <div class="Boton">
-            <button class="button1">Registrarse</button>
+            <button class="button1">Registrarse</button>      <! -- Enlazar  -->
             <p class="texto_ini">Ya tienes una cuenta? inicia con:</p>
             <div class="iconos3">
-                <img src="images/faceInicio.png" class="FaceI">
-                <img src="images/gmail-Inicio.png" class="email-ini">
+                <a href="https://www.facebook.com">
+                    <img src="images/faceInicio.png" class="FaceI" alt="Registrarse con Facebook">
+                </a>
+                <a href="https://accounts.google.com/">
+                    <img src="images/gmail-Inicio.png" class="email-ini" alt="Registrarse con Gmail">
+                </a>
             </div>
             </div>
     </div>

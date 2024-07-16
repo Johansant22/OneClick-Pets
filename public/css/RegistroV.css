@@ -114,19 +114,31 @@ footer {
     height: 1px;
     bottom: 0;
     width: 100%;
-   
-}
 
-.pie-pag {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+    .pie-pag {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 }
 
 .pie-pag p {
    margin: 0;
    margin-left: 10px;
    font-size: 14px;
+}
+
+.redes {
+ display: flex;
+ margin-top: -15px;
+ justify-content: end;
+ margin-right: 50px;
+}
+
+.facebook, .instagram, .youtube, .TX {
+    width: 30px;
+    height: auto;
+    margin-left: 15px;
 }
 
