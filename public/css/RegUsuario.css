@@ -3,7 +3,6 @@ body{
     margin: 0;
     background-color: white;
     overflow-x: hidden;
-    
 }
 
 
@@ -25,58 +24,102 @@ border-radius: 40px;
 
 
 .container {
-    width: 30%; 
-    margin: 0 auto; 
-    border: 1px solid #ccc; 
-    padding: 3px;
-    border-radius: 20px; 
-    text-align: center;
-    }
-
-
-    .button1 {
-        padding: 5px ; 
-        font-size: 16px;
-        margin-top: 20px;
-        border-radius: 10px;
-        background-color: #fca311;
-    }
-    
-    .texto_ini {
-        margin-top: 10px;
-    }
-    
-
-input[type="text"],
-input[type="password"],
-input[type="checkbox"],
-button[clas="button1"]{
-    width: 70%; 
-    padding: 5px; 
-    margin-bottom: 5px; 
-    border-radius: 5px; 
-    border: 1px solid #ccc; 
-    box-sizing: border-box;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px auto;
+    background-color: #FFFAF1;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-input[type="checkbox"] {
-    width: auto; 
-    height: auto; 
-    margin-right: 10px; 
-    border-radius: 5px; 
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.button1 {
+    display: block;
+    width: 50%;
+    padding: 10px;
+    background-color: #FCA311;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 25%;
+}
+
+.button1:hover {
+    background-color: #FDB949;
+}
+
+.texto_ini {
+    text-align: center;
+    margin-top: 10px;
+    color: #333;
+    text-decoration: none;
+}
+
+.texto_ini a {
+    color: #4CAF50;
+}
+
+.texto_ini a:hover {
+    text-decoration: underline;
 }
 
 .iconos3 {
     display: flex;
     justify-content: center;
-    gap: 30px; 
-    margin-top: 30px; 
+    margin-top: 10px;
+}
+
+.iconos3 a {
+    margin: 0 10px;
 }
 
 .iconos3 img {
-    width: 30px; /* Ajusta según sea necesario */
+    width: 40px;
     height: auto;
 }
+
+.check{
+    text-align: center;
+}
+
+
+.form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group1, .form-group2 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -89,9 +132,8 @@ input[type="checkbox"] {
     height: 50px;
     right:10px;
     position: absolute;
-    top:510px;
+    bottom: -85%;
 }
-
 
   footer {
     background-color: black;
@@ -99,7 +141,7 @@ input[type="checkbox"] {
     position: absolute;
     color: white;
     height: 1px;
-    bottom: 0;
+    bottom: -98%;
     width: 100%;
 
     .pie-pag {
