@@ -15,83 +15,116 @@
     </header>
 
     <div class="container">
-        <form action="{{ route('registro.store') }}" method="post">
+        <form action="{{ route('registro.create') }}" method="POST">
             @csrf
             <h2>Registro de Usuario</h2>
-            <label for="Nombre1">Primer Nombre:</label><br>
-            <input type="text" id="Nombre1" name="Nombre1" required><br>
 
-            <label for="Nombre2">Segundo Nombre:</label><br>
-            <input type="text" id="Nombre2" name="Nombre2"><br>
+            <!-- Primer grupo de campos -->
+            <div class="form-group">
+                <label for="Nombre1">Primer Nombre:</label>
+                <input type="text" id="Nombre1" name="Nombre1" required>
 
-            <label for="Apellido1">Primer Apellido:</label><br>
-            <input type="text" id="Apellido1" name="Apellido1" required><br>
+                <label for="Nombre2">Segundo Nombre:</label>
+                <input type="text" id="Nombre2" name="Nombre2">
+            </div>
 
-            <label for="Apellido2">Segundo Apellido:</label><br>
-            <input type="text" id="Apellido2" name="Apellido2"><br>
+            <!-- Segundo grupo de campos -->
+            <div class="form-group">
+                <label for="Apellido1">Primer Apellido:</label>
+                <input type="text" id="Apellido1" name="Apellido1" required>
 
-            <label for="Direccion">Dirección:</label><br>
-            <input type="text" id="Direccion" name="Direccion" required><br>
+                <label for="Apellido2">Segundo Apellido:</label>
+                <input type="text" id="Apellido2" name="Apellido2">
+            </div>
 
-            <label for="Num_identificacion">Número de Identificación:</label><br>
-            <input type="text" id="Num_identificacion" name="Num_identificacion" required><br>
+            <!-- Tercer grupo de campos -->
+            <div class="form-group">
+                <label for="Direccion">Dirección:</label>
+                <input type="text" id="Direccion" name="Direccion" required>
+            </div>
 
-            <label for="Correo">Correo:</label><br>
-            <input type="email" id="Correo" name="Correo" required><br>
+            <!-- Cuarto grupo de campos -->
+            <div class="form-group">
+                <label for="Num_identificacion">Número de Identificación:</label>
+                <input type="text" id="Num_identificacion" name="Num_identificacion" required>
 
-            <label for="Telefono">Teléfono:</label><br>
-            <input type="text" id="Telefono" name="Telefono" required><br>
+                <label for="Correo">Correo:</label>
+                <input type="email" id="Correo" name="Correo" required>
+            </div>
 
-            <label for="tipo_documento_id">Tipo de Documento:</label><br>
-            <select id="tipo_documento_id" name="tipo_documento_id" required>
-                <option value="">Selecciona...</option>
-                <option value="CC">Cédula de Ciudadanía (CC)</option>
-                <option value="TI">Tarjeta de Identidad (TI)</option>
-                <option value="CE">Cédula de Extranjería (CE)</option>
-            </select><br>
+            <!-- Quinto grupo de campos -->
+            <div class="form-group">
+                <label for="Telefono">Teléfono:</label>
+                <input type="text" id="Telefono" name="Telefono" required>
 
-            <label for="ciudad_id">Ciudad:</label><br>
-            <input type="text" id="ciudad_id" name="ciudad_id" required><br>
+                <label for="tipo_documento_id">Tipo de Documento:</label>
+                <select id="tipo_documento_id" name="tipo_documento_id" required>
+                    <option value="">Selecciona...</option>
+                    <option value="CC">Cédula de Ciudadanía (CC)</option>
+                    <option value="TI">Tarjeta de Identidad (TI)</option>
+                    <option value="CE">Cédula de Extranjería (CE)</option>
+                </select>
+            </div>
 
-            <label for="departamento_id">Departamento:</label><br>
-            <input type="text" id="departamento_id" name="departamento_id" required><br>
+            <!-- Sexto grupo de campos -->
+            <div class="form-group">
+                <label for="ciudad_id">Ciudad:</label>
+                <input type="text" id="ciudad_id" name="ciudad_id" required>
 
-            <label for="tipo_tercero_id">Tipo de cuenta:</label><br>
-            <select id="tipo_tercero_id" name="tipo_tercero_id" required>
-                <option value="">Selecciona...</option>
-                <option value="1">Empresa</option>
-                <option value="2">Cuenta Personal</option>
-            </select><br>
+                <label for="departamento_id">Departamento:</label>
+                <input type="text" id="departamento_id" name="departamento_id" required>
+            </div>
 
-            <label for="genero_id">Género:</label><br>
-            <select id="genero_id" name="genero_id" required>
-                <option value="">Selecciona...</option>
-                <option value="1">Femenino</option>
-                <option value="2">Masculino</option>
-            </select><br>
+            <!-- Séptimo grupo de campos -->
+            <div class="form-group">
+                <label for="tipo_tercero_id">Tipo de cuenta:</label>
+                <select id="tipo_tercero_id" name="tipo_tercero_id" required>
+                    <option value="">Selecciona...</option>
+                    <option value="1">Empresa</option>
+                    <option value="2">Cuenta Personal</option>
+                </select>
 
-            <label for="pwd">Crear Contraseña:</label><br>
-            <input type="password" id="pwd" name="pwd" required><br>
+                <label for="genero_id">Género:</label>
+                <select id="genero_id" name="genero_id" required>
+                    <option value="">Selecciona...</option>
+                    <option value="1">Femenino</option>
+                    <option value="2">Masculino</option>
+                </select>
+            </div>
 
-            <label for="cpwd">Confirmar Contraseña:</label><br>
-            <input type="password" id="cpwd" name="cpwd" required><br>
+            <!-- Octavo grupo de campos -->
+            <div class="form-group">
+                <label for="pwd">Crear Contraseña:</label>
+                <input type="password" id="pwd" name="pwd" required>
 
-            <input type="checkbox" id="terms" name="terms" required>
-            <label for="terms">Acepto términos y condiciones</label><br>
+                <label for="cpwd">Confirmar Contraseña:</label>
+                <input type="password" id="cpwd" name="cpwd" required>
+            </div>
 
-        <button type="submit" class="button1">Registrarse</button>
-        <a href="">
-            <p class="texto_ini">¿Ya tienes una cuenta?</p>
-        </a>
-        <p class="texto_ini">Inicia con:</p>
-        <div class="iconos3">
-        <img src="images/faceInicio.png" class="FaceI">
-        <img src="images/gmail-Inicio.png" class="email-ini">
-        </div>
+            <!-- Checkbox -->
+            <div class="form-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">Acepto términos y condiciones</label>
+            </div>
+
+            <!-- Botón de registro -->
+            <button type="submit" class="button1">Registrarse</button>
+
+            <!-- Enlace para iniciar sesión -->
+            <a href="{{ route('inicio.index') }}">
+                <p class="texto_ini">¿Ya tienes una cuenta? Inicia sesión aquí.</p>
+            </a>
+
+            <!-- Otra opción de inicio de sesión -->
+            <p class="texto_ini">Inicia con:</p>
+            <div class="iconos3">
+                <img src="images/faceInicio.png" class="FaceI">
+                <img src="images/gmail-Inicio.png" class="email-ini">
+            </div>
         </form>
     </div>
 
-    <img src="images/soporte.png" class="soporte">
+
 
     <footer>
         <div class="pie-pag">

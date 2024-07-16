@@ -5,89 +5,64 @@ body {
     overflow-x: hidden;
 }
 
-header {
+header{
     background-color: black;
     padding: 40px;
     position: relative;
 }
 
 .logo-header {
-    height: 100%;
-    width: auto;
-    position: absolute;
-    left: 0%;
-    top: 0%;
-    border-radius: 40px;
+height: 100%;
+width: auto;
+position: absolute;
+left: 0%;
+top: 0%;
+border-radius: 40px;
 }
 
 .container {
-    width: 30%;
-    margin: 0 auto;
-    border: 1px solid #ccc;
+    width: 90%; /* Ancho del contenedor principal */
+    margin: 0 auto; /* Centrar el contenedor en la página */
+    background-color: #fffaf1;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 24px;
     text-align: center;
-    background-color: #f0f0f0; /* Color de fondo agregado */
+    margin-bottom: 20px;
 }
 
-.button1 {
-    padding: 10px;
-    font-size: 16px;
-    margin-top: 20px;
-    border-radius: 10px;
-    background-color: #fca311;
-    border: none; /* Quitamos el borde para que sea consistente */
-    cursor: pointer;
-    color: white;
-}
-
-.texto_ini {
-    margin-top: 10px;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="checkbox"],
-select {
-    width: calc(100% - 20px); /* Ajustamos el ancho para incluir el padding */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-input[type="checkbox"] {
-    width: auto;
-    height: auto;
-    margin-right: 10px;
-    border-radius: 5px;
-}
-
-.iconos3 {
+.form-group {
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 30px;
+    justify-content: space-between;
+    align-items: center; /* Alinea verticalmente los elementos */
+    margin-bottom: 15px;
 }
 
-.iconos3 img {
-    width: 30px; /* Ajusta según sea necesario */
-    height: auto;
+.form-group label {
+    width: 20%; /* Ancho del label reducido */
+    font-weight: bold;
+    margin-right: 10px; /* Espaciado reducido entre label y input */
 }
 
-.soporte {
-    width: 50px;
-    height: 50px;
-    right: 10px;
-    position: absolute;
-    top: 510px;
+.form-group input,
+.form-group select {
+    width: 70%; /* Ancho del input o select ajustado */
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
 }
+
+
 
 footer {
     background-color: black;
-    padding: 40px;
+    padding: 25px;
     position: absolute;
     color: white;
     height: 100px; /* Ajustado para permitir el contenido visible */

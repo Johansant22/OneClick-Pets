@@ -19,7 +19,7 @@
                 <img src="{{ $gravatarUrl }}" alt="perfil" class="perfil">
             @else
             <!-- Ícono de perfil genérico, el cual me lleva a formulario registro -->
-                <a href="{{ route('registro.create') }}">
+                <a href="{{ route('registro.index') }}">
                     <img src="images/perfil.png" alt="perfil" class="perfil">
                 </a>
             @endauth
