@@ -9,6 +9,13 @@ class Tercero extends Model
 {
     use HasFactory;
     protected $table = 'terceros';
+
+    protected $fillable = [
+        'Nombre1', 'Nombre2', 'Apellido1', 'Apellido2', 'Direccion',
+        'Num_identificacion', 'Correo', 'Telefono', 'tipo_documento_id',
+        'ciudad_id', 'departamento_id', 'tipo_tercero_id', 'genero_id', 'contrasena'
+    ];
+
     protected $guarded = [];
     //Relacion a nivel de modelos 1:1 con:
     //tipo tercero, tipo documento, departamento, ciudad, tipo_pqrs y genero

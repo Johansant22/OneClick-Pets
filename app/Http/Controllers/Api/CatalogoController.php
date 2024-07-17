@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class CatalogoController extends Controller
 {
-    //
+    public function pruebaLog(){
+        return view('prueba');
+    }
 }

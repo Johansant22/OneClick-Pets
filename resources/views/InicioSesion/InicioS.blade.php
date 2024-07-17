@@ -14,36 +14,48 @@
     </header>
 <main>
     <div class="container">
-        <h1>INICIAR SESIÓN</h1>
-        <action="/login" method="post">
-            
-            <label for="email">Correo Electronico*</label><br>
+        <h1>INICIAR SESION</h1>
+        <form action="{{ route('inicia-sesion') }}" method="post">
+            @csrf
+
+            <label class="correo" for="email">Correo Electrónico*</label><br>
             <input type="email" id="email" name="email" required><br> <br>
-            <label for="password">Contraseña*</label><br>
-            <input type="password" id="password" name="password" required><br>
+
+            <label class="correo" for="password">Contraseña*</label><br>
+            <input class="passwordIni" type="password" id="password" name="password" required><br>
+
             <input type="checkbox" id="remember" name="remember">
             <label for="remember">Recordar Contraseña</label><br>
+
+            <button type="submit" class="button1">Iniciar sesión</button>
         </form>
-    
+
         <div class="BotonesIni">
-        <button class="button1">Iniciar Sesión</button> <! -- Enlazar -->
-        <button class="button2">Crear Cuenta</button>   <! -- Enlazar -->
-        </div>
-        
-    
-        <p class="texto_ini">Iniciar con:</p>
-    
-    <div class="Icon33">
-    
-        <a href="https://www.facebook.com">
-            <img src="images/faceInicio.png" class="FaceI" alt="Registrarse con Facebook">
+        <button class="button1">iniciar sesion</button>
+
+
+        <a href="{{ route('registro.create') }}">
+            <button class="button2">Crear cuenta</button>
         </a>
-        <a href="https://accounts.google.com/">
-            <img src="images/gmail-Inicio.png" class="email-ini" alt="Registrarse con Gmail">
-        </a>
+
+
+        <p class="texto_ini">iniciar con:</p>
+
+    <div class="20px !importantenedorRed">
+
+    <img src="imagenes/faceInicio.png" class="FaceI">
+    <img src="imagenes/gmail-Inicio.png" class="email-ini">
     </div>
+
+
+
 </main>
 
+<footer>
+        <div class="pie-pag">
+        <p>&copy; Copyrigth 2022 | OneClick Pets <br> Información legal | Politicas de privacidad
+        </p>
+    </div>
 
 <img src="images/soporte.png" class="soporte">
 <footer>

@@ -10,12 +10,15 @@ class TerceroController extends Controller
 {
 
    //Muestra el formulario de registro
+
+
+
     public function create(){
         return view('RegistroUsuario.RegUsuario');
     }
 
 
-    //Procesar el registro de usuario
+   /* //Procesar el registro de usuario
     public function store(Request $request){
          // Validar los datos del formulario
         $request->validate([
@@ -40,7 +43,7 @@ class TerceroController extends Controller
 
         // Redirigir a la página de inicio u otra vista
         return redirect()->route('inicio.index');
-    }
+    }*/
 
 
 

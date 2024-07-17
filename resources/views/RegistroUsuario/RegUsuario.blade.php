@@ -10,12 +10,10 @@
 <body>
     <header>
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
-        <a href="{{ route('registro.create') }}"> <!-- Ruta al formulario de registro -->
-        </a>
     </header>
 
     <div class="container">
-        <form action="{{ route('registro.create') }}" method="POST">
+        <form action="{{ route('validar-registro') }}" method="POST">
             @csrf
             <h2>Registro de Usuario</h2>
 
@@ -60,9 +58,9 @@
                 <label for="tipo_documento_id">Tipo de Documento:</label>
                 <select id="tipo_documento_id" name="tipo_documento_id" required>
                     <option value="">Selecciona...</option>
-                    <option value="CC">Cédula de Ciudadanía (CC)</option>
-                    <option value="TI">Tarjeta de Identidad (TI)</option>
-                    <option value="CE">Cédula de Extranjería (CE)</option>
+                    <option value="1">Cédula de Ciudadanía (CC)</option>
+                    <option value="2">Tarjeta de Identidad (TI)</option>
+                    <option value="3">Cédula de Extranjería (CE)</option>
                 </select>
             </div>
 
@@ -108,10 +106,13 @@
             </div>
 
             <!-- Botón de registro -->
-            <button type="submit" class="button1">Registrarse</button>
+            <a href="{{ route('prueba-log') }}">
+                <button type="submit" class="button1">Registrarse</button>
+            </a>
+
 
             <!-- Enlace para iniciar sesión -->
-            <a href="{{ route('inicio.index') }}">
+            <a href="{{ route('formulario-iniciar-sesion') }}">
                 <p class="texto_ini">¿Ya tienes una cuenta? Inicia sesión aquí.</p>
             </a>
 

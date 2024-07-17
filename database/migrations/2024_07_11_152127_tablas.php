@@ -47,13 +47,14 @@ return new class extends Migration
         Schema::create('terceros', function (Blueprint $table) {
             $table->id();
             $table->string('Nombre1');
-            $table->string('Nombre2');
+            $table->string('Nombre2')->nullable();
             $table->string('Apellido1');
-            $table->string('Apellido2');
+            $table->string('Apellido2')->nullable();
             $table->string('Direccion');
-            $table->integer('Num_identificacion');
+            $table->string('Num_identificacion');
             $table->string('Correo')->unique();
             $table->string('Telefono');
+            $table->string('contrasena');
             $table->timestamps();
 
             // Relación 1:1 con la tabla tipo_documento
