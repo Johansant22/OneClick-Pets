@@ -2,43 +2,35 @@
 
 namespace App\Models;
 
+use Illuminate\Auth\Events\Authenticated;
+use Illuminate\Auth\Middleware\Authenticate;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Tercero extends Model
+class Tercero extends Authenticatable
 {
     use HasFactory;
     protected $table = 'terceros';
 
     protected $fillable = [
         'Nombre1', 'Nombre2', 'Apellido1', 'Apellido2', 'Direccion',
-        'Num_identificacion', 'Correo', 'Telefono', 'tipo_documento_id',
-        'ciudad_id', 'departamento_id', 'tipo_tercero_id', 'genero_id', 'contrasena'
+        'Num_identificacion', 'Correo', 'Telefono',
+        'contrasena'
     ];
 
     protected $guarded = [];
-    //Relacion a nivel de modelos 1:1 con:
-    //tipo tercero, tipo documento, departamento, ciudad, tipo_pqrs y genero
-    public function tipo_tercero() {
-        return $this->hasOne('App\Models\TipoTercero');
-    }
 
-    public function tipo_documento() {
-        return $this->hasOne('App\Models\TipoDocumento');
-    }
+    protected $hidden = [
+        'contrasena',
+    ];
 
-    public function departamento() {
-        return $this->hasOne('App\Models\Departamento');
-    }
 
-    public function ciudad() {
-        return $this->hasOne('App\Models\Ciudad');
+    // Método para obtener la contraseña (el campo se llama "contrasena" en lugar de "password")
+    public function getAuthPassword()
+    {
+        return $this->contrasena;
     }
-
-    public function genero() {
-        return $this->hasOne('App\Models\Genero');
-    }
-
     //Relaciones a nivel de modelo 1:M
     //Con: empresa
 

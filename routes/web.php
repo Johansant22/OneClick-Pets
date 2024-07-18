@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\CatalogoController;
 use App\Http\Controllers\api\InicioSesionController;
 use App\Http\Controllers\Api\TerceroController;
 use App\Http\Controllers\InicioController;
@@ -17,6 +18,11 @@ Route::get('/formulario_registro',[TerceroController::class, 'create'])->name('r
 //Ruta para iniciar sesion
 Route::get('/formulario-inicio-sesion',[InicioSesionController::class, 'create'])->name('formulario-iniciar-sesion');
 Route::post('/validar-registro', [InicioSesionController::class,'registro'])->name('validar-registro');
-Route::post('/inicia-sesion', [InicioSesionController::class,'iniciarSesion'])->name('inicia-sesion');
+Route::post('/inicia-sesion', [InicioSesionController::class,'login'])->name('inicia-sesion');
 Route::get('/cerrar-sesion', [InicioSesionController::class,'cerrarSesion'])->name('cerrar-sesion');
-Route::get('/prueba-log', [InicioSesionController::class,'pruebaLog'])->name('prueba-log');
+
+//rutas protegidas si el usuario no está registrado
+Route::view('/privada', 'secret')->middleware('auth')->name('privada');
+Route::get('/prueba-log', [CatalogoController::class, 'prueba'])->middleware('auth')->name('prueba-log');
+//Ruta de catalogo
+Route::get('/catalogo',[CatalogoController::class, 'create'])->name('catalogo');

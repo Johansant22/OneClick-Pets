@@ -55,48 +55,14 @@
                 <label for="Telefono">Teléfono:</label>
                 <input type="text" id="Telefono" name="Telefono" required>
 
-                <label for="tipo_documento_id">Tipo de Documento:</label>
-                <select id="tipo_documento_id" name="tipo_documento_id" required>
-                    <option value="">Selecciona...</option>
-                    <option value="1">Cédula de Ciudadanía (CC)</option>
-                    <option value="2">Tarjeta de Identidad (TI)</option>
-                    <option value="3">Cédula de Extranjería (CE)</option>
-                </select>
             </div>
-
-            <!-- Sexto grupo de campos -->
-            <div class="form-group2">
-                <label for="ciudad_id">Ciudad:</label>
-                <input type="text" id="ciudad_id" name="ciudad_id" required>
-
-                <label for="departamento_id">Departamento:</label>
-                <input type="text" id="departamento_id" name="departamento_id" required>
-            </div>
-
-            <!-- Séptimo grupo de campos -->
-            <div class="form-group1">
-                <label for="tipo_tercero_id">Tipo de cuenta:</label>
-                <select id="tipo_tercero_id" name="tipo_tercero_id" required>
-                    <option value="">Selecciona...</option>
-                    <option value="1">Empresa</option>
-                    <option value="2">Cuenta Personal</option>
-                </select>
-
-                <label for="genero_id">Género:</label>
-                <select id="genero_id" name="genero_id" required>
-                    <option value="">Selecciona...</option>
-                    <option value="1">Femenino</option>
-                    <option value="2">Masculino</option>
-                </select>
-            </div>
-
             <!-- Octavo grupo de campos -->
             <div class="form-group2">
                 <label for="pwd">Crear Contraseña:</label>
-                <input type="password" id="pwd" name="pwd" required>
+                <input type="password" id="contrasena" name="contrasena" required>
 
                 <label for="cpwd">Confirmar Contraseña:</label>
-                <input type="password" id="cpwd" name="cpwd" required>
+                <input type="password" id="confirm-contrasena" name="confirm-contrasena" required>
             </div>
 
             <!-- Checkbox -->

@@ -33,7 +33,7 @@
 
         <nav>
             <ul>
-                <li><a href="#">Catálogo</a></li>
+                <li><a href="{{ route('catalogo') }}">Catálogo</a></li>
                 <li><a href="#">Categoría</a></li>
                 <li><a href="#">Compras</a></li>
                 <li><a href="#">Vender</a></li>

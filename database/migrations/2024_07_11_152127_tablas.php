@@ -11,38 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipo_documentos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre');
-            $table->string('descripcion');
-            $table->timestamps();
-        });
 
-        Schema::create('ciudads', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre_ciudad');
-            $table->string('codigo_ciudad');
-            $table->timestamps();
-        });
-
-        Schema::create('departamentos', function (Blueprint $table) {
-            $table->id();
-            $table->string('nombre_departamento');
-            $table->string('codigo_departamento');
-            $table->timestamps();
-        });
-
-        Schema::create('generos', function (Blueprint $table) {
-            $table->id();
-            $table->string('categoria_genero');
-            $table->timestamps();
-        });
-
-        Schema::create('tipo_terceros', function (Blueprint $table) {
-            $table->id();
-            $table->string('categoria_tercero');
-            $table->timestamps();
-        });
 
         Schema::create('terceros', function (Blueprint $table) {
             $table->id();
@@ -56,26 +25,6 @@ return new class extends Migration
             $table->string('Telefono');
             $table->string('contrasena');
             $table->timestamps();
-
-            // Relación 1:1 con la tabla tipo_documento
-            $table->unsignedBigInteger('tipo_documento_id');
-            $table->foreign('tipo_documento_id')->references('id')->on('tipo_documentos')->onDelete('cascade')->onUpdate('cascade');
-
-            // Relación 1:1 con ciudad
-            $table->unsignedBigInteger('ciudad_id');
-            $table->foreign('ciudad_id')->references('id')->on('ciudads')->onDelete('cascade')->onUpdate('cascade');
-
-            // Relación 1:1 con departamento
-            $table->unsignedBigInteger('departamento_id');
-            $table->foreign('departamento_id')->references('id')->on('departamentos')->onDelete('cascade')->onUpdate('cascade');
-
-            // Relación 1:1 con tipo_tercero
-            $table->unsignedBigInteger('tipo_tercero_id');
-            $table->foreign('tipo_tercero_id')->references('id')->on('tipo_terceros')->onDelete('cascade')->onUpdate('cascade');
-
-            // Relación 1:1 con genero
-            $table->unsignedBigInteger('genero_id');
-            $table->foreign('genero_id')->references('id')->on('generos')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('empresas', function (Blueprint $table) {

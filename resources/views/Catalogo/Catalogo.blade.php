@@ -9,12 +9,12 @@
     <link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
-    
 
-    
+
+
     <header>
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
-        
+
         <div class="ico1">
         <img src="images/perfil.png" alt="perfil" class="perfil">
         <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
@@ -27,14 +27,14 @@
 
         <nav>
             <ul>
-              <li><a href="#">Catálogo</a></li>
-              <li><a href="#">Categoría</a></li>
-              <li><a href="#">Compras</a></li>
-              <li><a href="#">Vender</a></li>
-              <li><a href="#">Ofertas</a></li>
-              <li><a href="#">Historial</a></li>
-              <li><a href="#">Mis Favoritos</a></li>
-              <li><a href="#">Ayuda/PQRS</a></li>
+            <li><a href="{{ route('login') }}">Catálogo</a></li>
+            <li><a href="#">Categoría</a></li>
+            <li><a href="#">Compras</a></li>
+            <li><a href="#">Vender</a></li>
+            <li><a href="#">Ofertas</a></li>
+            <li><a href="#">Historial</a></li>
+            <li><a href="#">Mis Favoritos</a></li>
+            <li><a href="#">Ayuda/PQRS</a></li>
             </ul>
           </nav>
     </header>
@@ -44,108 +44,109 @@
     <main>
         <section class="catalog">
             <div class="product-card">
-                <img src="images/pro1.jpg" alt="Producto 1">
-                <h2>Alimento para gato</h2>
-                <p>$10.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-            <div class="product-card">
-                <img src="images/pro2.jpg" alt="Producto 2">
-                <h2>Juguete para gato</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro3.jpg" alt="Producto 2">
-                <h2>Dispensador de Alimento</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro4.jpg" alt="Producto 2">
-                <h2>Shampoo para perro</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro5.png" alt="Producto 2">
-                <h2>Alimento gato (15Kg)</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro2.jpg" alt="Producto 2">
-                <h2>Juguete para gato</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro1.jpg" alt="Producto 2">
+                <img src="{{ asset('images/pro1.jpg') }}" alt="Producto 2">
                 <h2>Alimento para gato</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro5.png" alt="Producto 2">
-                <h2>Alimento gato (15Kg)</h2>
+                <img src="{{ asset('images/pro2.jpg') }}" alt="Producto 2">
+                <h2>Juguete para gato</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro3.jpg" alt="Producto 2">
+                <img src="{{ asset('images/pro3.jpg') }}" alt="Producto 2">
                 <h2>Dispensador de Alimento</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro4.jpg" alt="Producto 2">
+                <img src="{{ asset('images/pro4.jpg') }}" alt="Producto 2">
                 <h2>Shampoo para perro</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro5.png" alt="Producto 2">
+                <img src="{{ asset('images/pro5.png') }}" alt="Producto 2">
                 <h2>Alimento gato (15Kg)</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro3.jpg" alt="Producto 2">
-                <h2>Dispensador de Alimento</h2>
+                <img src="{{ asset('images/pro2.jpg') }}" alt="Producto 2">
+                <h2>Juguete para gato</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro4.jpg" alt="Producto 2">
-                <h2>Shampoo para perro</h2>
-                <p>$20.00</p>
-                <button>Agregar al carrito</button>
-            </div>
-
-            <div class="product-card">
-                <img src="images/pro1.jpg" alt="Producto 2">
+                <img src="{{ asset('images/pro1.jpg') }}" alt="Producto 2">
                 <h2>Alimento para gato</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
 
             <div class="product-card">
-                <img src="images/pro2.jpg" alt="Producto 2">
+                <img src="{{ asset('images/pro5.png') }}" alt="Producto 2">
+                <h2>Alimento gato (15Kg)</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro3.jpg') }}" alt="Producto 2">
+                <h2>Dispensador de Alimento</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro4.jpg') }}" alt="Producto 2">
+                <h2>Shampoo para perro</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro5.png') }}" alt="Producto 2">
+                <h2>Alimento gato (15Kg)</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro3.jpg') }}" alt="Producto 2">
+                <h2>Dispensador de Alimento</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro4.jpg') }}" alt="Producto 2">
+                <h2>Shampoo para perro</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+            <div class="product-card">
+                <img src="{{ asset('images/pro2.jpg') }}" alt="Producto 2">
                 <h2>Juguete para gato</h2>
                 <p>$20.00</p>
                 <button>Agregar al carrito</button>
             </div>
+
+            <div class="product-card">
+                <img src="{{ asset('images/pro1.jpg') }}" alt="Producto 2">
+                <h2>Alimento para gato</h2>
+                <p>$20.00</p>
+                <button>Agregar al carrito</button>
+            </div>
+
 
         </section>
     </main>

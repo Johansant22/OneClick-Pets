@@ -7,7 +7,10 @@ use Illuminate\Http\Request;
 
 class CatalogoController extends Controller
 {
-    public function pruebaLog(){
+    public function create(){
+        return view('Catalogo.Catalogo');
+    }
+    public function prueba(){
         return view('prueba');
     }
 }
