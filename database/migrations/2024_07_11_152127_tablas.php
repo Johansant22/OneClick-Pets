@@ -13,19 +13,6 @@ return new class extends Migration
     {
 
 
-        Schema::create('terceros', function (Blueprint $table) {
-            $table->id();
-            $table->string('Nombre1');
-            $table->string('Nombre2')->nullable();
-            $table->string('Apellido1');
-            $table->string('Apellido2')->nullable();
-            $table->string('Direccion');
-            $table->string('Num_identificacion');
-            $table->string('Correo')->unique();
-            $table->string('Telefono');
-            $table->string('contrasena');
-            $table->timestamps();
-        });
 
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
@@ -33,8 +20,8 @@ return new class extends Migration
             $table->integer('nit');
             $table->string('objeto_social');
             $table->timestamps();
-            $table->unsignedBigInteger('tercero_id');
-            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
         });
 
         Schema::create('productos', function (Blueprint $table) {
@@ -83,8 +70,8 @@ return new class extends Migration
             $table->timestamps();
 
             // Relación 1:M con la tabla tercero
-            $table->unsignedBigInteger('tercero_id');
-            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             // Relación 1:M con la tabla productos
             $table->unsignedBigInteger('producto_id');
@@ -121,8 +108,8 @@ return new class extends Migration
             $table->timestamps();
 
             // Relación 1:M con la tabla tercero
-            $table->unsignedBigInteger('tercero_id');
-            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
 
             // Relación 1:M con la tabla empresa
             $table->unsignedBigInteger('empresa_id');
@@ -184,14 +171,14 @@ return new class extends Migration
             $table->unsignedBigInteger('inventario_id');
             $table->foreign('inventario_id')->references('id')->on('inventarios')->onDelete('cascade')->onUpdate('cascade');
         });
-
-        Schema::create('tercero_tipo_pqrs', function (Blueprint $table) {
+        //Tabla pivot con tipo pqrs y users
+        Schema::create('user_tipo_pqrs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tercero_id');
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('tipo_pqrs_id');
             $table->timestamps();
 
-            $table->foreign('tercero_id')->references('id')->on('terceros')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->foreign('tipo_pqrs_id')->references('id')->on('tipo_de_pqrs')->onDelete('cascade')->onUpdate('cascade');
         });
     }

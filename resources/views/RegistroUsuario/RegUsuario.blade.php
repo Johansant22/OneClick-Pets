@@ -17,64 +17,52 @@
             @csrf
             <h2>Registro de Usuario</h2>
 
-            <!-- Primer grupo de campos -->
+             <!-- Primer grupo de campos -->
             <div class="form-group1">
-                <label for="Nombre1">Primer Nombre:</label>
-                <input type="text" id="Nombre1" name="Nombre1" required>
-
-                <label for="Nombre2">Segundo Nombre:</label>
-                <input type="text" id="Nombre2" name="Nombre2">
+                <label for="name">Nombre Completo:</label>
+                <input type="text" id="name" name="name" required>
             </div>
 
-            <!-- Segundo grupo de campos -->
-            <div class="form-group2">
-                <label for="Apellido1">Primer Apellido:</label>
-                <input type="text" id="Apellido1" name="Apellido1" required>
-
-                <label for="Apellido2">Segundo Apellido:</label>
-                <input type="text" id="Apellido2" name="Apellido2">
-            </div>
-
-            <!-- Tercer grupo de campos -->
+        <!-- Segundo grupo de campos -->
             <div class="form-group1">
                 <label for="Direccion">Dirección:</label>
                 <input type="text" id="Direccion" name="Direccion" required>
             </div>
 
-            <!-- Cuarto grupo de campos -->
+        <!-- Tercer grupo de campos -->
             <div class="form-group2">
                 <label for="Num_identificacion">Número de Identificación:</label>
                 <input type="text" id="Num_identificacion" name="Num_identificacion" required>
 
-                <label for="Correo">Correo:</label>
-                <input type="email" id="Correo" name="Correo" required>
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
             </div>
 
-            <!-- Quinto grupo de campos -->
+        <!-- Cuarto grupo de campos -->
             <div class="form-group1">
                 <label for="Telefono">Teléfono:</label>
                 <input type="text" id="Telefono" name="Telefono" required>
-
             </div>
-            <!-- Octavo grupo de campos -->
+
+        <!-- Quinto grupo de campos -->
             <div class="form-group2">
-                <label for="pwd">Crear Contraseña:</label>
-                <input type="password" id="contrasena" name="contrasena" required>
+                <label for="password">Crear Contraseña:</label>
+                <input type="password" id="password" name="password" required>
 
-                <label for="cpwd">Confirmar Contraseña:</label>
-                <input type="password" id="confirm-contrasena" name="confirm-contrasena" required>
+                <label for="password_confirmation">Confirmar Contraseña:</label>
+                <input type="password" id="password_confirmation" name="password_confirmation" required>
             </div>
 
-            <!-- Checkbox -->
+        <!-- Checkbox -->
             <div class="check">
                 <input type="checkbox" id="terms" name="terms" required>
                 <label for="terms">Acepto términos y condiciones</label>
             </div>
 
-            <!-- Botón de registro -->
-            <a href="{{ route('prueba-log') }}">
-                <button type="submit" class="button1">Registrarse</button>
-            </a>
+        <!-- Botón de registro -->
+        <div class="form-group">
+            <button type="submit">Registrar</button>
+        </div>
 
 
             <!-- Enlace para iniciar sesión -->

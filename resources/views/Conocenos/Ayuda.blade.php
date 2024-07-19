@@ -9,10 +9,10 @@
 
 </head>
 <body>
-    
+
     <header>
         <img src="imagenes/Logo.png" alt="Logo OneClick Pets" class="logo-header">
-        
+
         <div class="ico1">
         <img src="imagenes/perfil.png" alt="perfil" class="perfil">
         <img src="imagenes/carritocompras.png" alt="carritocompras" class="carrito">

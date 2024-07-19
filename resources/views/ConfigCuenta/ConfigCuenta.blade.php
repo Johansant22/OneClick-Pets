@@ -11,7 +11,7 @@
 <body>
     <header>
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">   <! -- Enlazar -->
-        
+
         <div class="ico1">
         <img src="images/perfil.png" alt="perfil" class="perfil">      <! -- Enlazar -->
         <img src="images/carritocompras.png" alt="carritocompras" class="carrito">    <! -- Enlazar -->
@@ -24,7 +24,7 @@
 
         <nav>
             <ul>
-              <li><a href="#">Catálogo</a></li>          <! -- Enlazar -->
+              <li><a href="{{ route('catalogo') }}">Catálogo</a></li>          <! -- Enlazar -->
               <li><a href="#">Categoría</a></li>          <! -- Enlazar -->
               <li><a href="#">Compras</a></li>         <! -- Enlazar -->
               <li><a href="#">Vender</a></li>            <! -- Enlazar -->
@@ -35,7 +35,7 @@
             </ul>
           </nav>
     </header>
-    
+
 
 
     <div class="infoConfig">
@@ -43,11 +43,16 @@
     </div>
 
 <div class="info-perfil">               <! -- Enlazar -->
-    <h2 class="tit-1">Nombre usuario</h2>
+    <h2 class="tit-1">@auth
+        {{ Auth::user()->name }}
+    @endauth</h2>
     <div>
         <img src="images/cta personal.png" alt="Perfil" class="perfil11">
         <div class="cont-1">
-        <p>ejemplo@gmail.com
+        <p>
+            @auth
+                {{ Auth::user()->email}}
+            @endauth
         </div>
     </div>
 </div>
@@ -56,7 +61,7 @@
     <div>
             <img src="images/cta personal.png" alt="Datos de cuenta" class="perfil22">
             <h3 class="dtcuenta">Datos de cuenta</h3>
-            <p class="inf-cuenta">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est amet alias reprehenderit? Iure vero id hic vitae quibusdam libero excepturi.</p>    
+            <p class="inf-cuenta">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est amet alias reprehenderit? Iure vero id hic vitae quibusdam libero excepturi.</p>
     </div>
 
     <div>
@@ -80,11 +85,19 @@
 
 
 <div class="menu-opciones">
-    <h2>Cambiar rol</h2>
+    <h2>Opciones</h2>
     <select>
         <option value="Comprador">Comprador</option>
         <option value="Vendedor">Vendedor</option>
     </select>
+    <a href="{{ route('cerrar-sesion') }}">
+        <ul name="configuraciones" id="configuraciones">
+            <li>
+                CERRAR SESIÓN
+            </li>
+        </ul>
+    </a>
+
 </div>
 
 <img src="images/soporte.png" class="soporte">

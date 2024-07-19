@@ -9,5 +9,9 @@
 <body>
     <h1>¡Bienvenido a la vista protegida!</h1>
     <p>Solo los usuarios autenticados pueden ver esto.</p>
+
+    <a href="{{ route('cerrar-sesion') }}">
+        <button>Salir</button>
+    </a>
 </body>
 </html>

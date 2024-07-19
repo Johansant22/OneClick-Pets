@@ -20,6 +20,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'Direccion',
+        'Num_identificacion',
+        'Telefono',
     ];
 
     /**
@@ -43,5 +46,23 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function empresa() {
+        return $this->belongsTo('App\Models\Empresa');
+    }
+
+    public function inventario() {
+        return $this->belongsTo('App\Models\Inventario');
+    }
+
+    public function cabezaFactura() {
+        return $this->belongsTo('App\Models\CabezaDeFactura');
+    }
+
+    // Relación a nivel de modelo N:M
+    //Con tipo_pqrs
+    public function tipo_pqrs() {
+        return $this->belongsToMany(TipoDePqr::class, 'tercero_tipo_pqrs'.'tercero_id','tipo_de_pqrs_id');
     }
 }

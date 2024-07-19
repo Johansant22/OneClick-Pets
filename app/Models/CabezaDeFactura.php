@@ -11,7 +11,7 @@ class CabezaDeFactura extends Model
 
     protected $table = 'cabeza_de_facturas';
     protected $guarded = [];
-     //Relacion a nivel de modelos 1:M con inventario
+     //Relacion a nivel de modelos 1:M con cuerpo de factura
     public function cuerpoFactura() {
         return $this->belongsTo('App\Models\CuerpoDeFactura');
     }
@@ -28,4 +28,9 @@ class CabezaDeFactura extends Model
     public function calificacionServicio() {
         return $this->hasMany('App\Models\CalificacionServicio');
     }
+
+    public function user() {
+        return $this->hasMany('App\Models\User');
+    }
+
 }

@@ -16,27 +16,34 @@
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
 
         <div class="ico1">
-        <img src="images/perfil.png" alt="perfil" class="perfil">
-        <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
-        <img src="images/ajustes.png" alt="ajustes" class="ajustes">
+            @auth
+                <!-- Ícono de perfil genérico, el cual me lleva a formulario registro -->
+                <a href="{{ route('perfil') }}">
+                    <img src="images/perfil.png" alt="perfil" class="perfil">
+                </a>
+            @endauth
+            <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
+            <img src="images/ajustes.png" alt="ajustes" class="ajustes">
         </div>
 
         <div class="b11">
-        <input type="text" placeholder="Buscar" class="barrabusqueda">
+            <input type="text" placeholder="Buscar" class="barrabusqueda">
         </div>
 
         <nav>
             <ul>
-            <li><a href="{{ route('login') }}">Catálogo</a></li>
-            <li><a href="#">Categoría</a></li>
-            <li><a href="#">Compras</a></li>
-            <li><a href="#">Vender</a></li>
-            <li><a href="#">Ofertas</a></li>
-            <li><a href="#">Historial</a></li>
-            <li><a href="#">Mis Favoritos</a></li>
-            <li><a href="#">Ayuda/PQRS</a></li>
+                <li><a href="{{ route('catalogo') }}">Catálogo</a></li>
+                <li><a href="#">Categoría</a></li>
+                <li><a href="#">Ofertas</a></li>
+                @auth
+                    <li><a href="#">Compras</a></li>
+                    <li><a href="#">Vender</a></li>
+                    <li><a href="#">Historial</a></li>
+                    <li><a href="#">Mis Favoritos</a></li>
+                    <li><a href="#">Ayuda/PQRS</a></li>
+                @endauth
             </ul>
-          </nav>
+        </nav>
     </header>
 
 

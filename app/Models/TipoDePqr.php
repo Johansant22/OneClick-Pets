@@ -12,7 +12,7 @@ class TipoDePqr extends Model
     protected $guarded = [];
     // Relación a nivel de modelo N:M
     //Con tipo_pqrs
-    public function tercero() {
-        return $this->belongsToMany(Tercero::class, 'tercero_tipo_pqrs'.'tipo_de_pqrs_id', 'tercero_id');
+    public function user() {
+        return $this->belongsToMany(User::class, 'tercero_tipo_pqrs'.'tipo_de_pqrs_id', 'tercero_id');
     }
 }

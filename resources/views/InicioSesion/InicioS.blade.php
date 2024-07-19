@@ -18,8 +18,18 @@
         <form action="{{ route('inicia-sesion') }}" method="post">
             @csrf
 
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+
             <label class="correo" for="email">Correo Electrónico*</label><br>
-            <input type="email" id="email" name="email" required><br> <br>
+            <input type="email" id="email" name="email" value="{{ old('email') }}"><br> <br>
 
             <label class="correo" for="password">Contraseña*</label><br>
             <input class="passwordIni" type="password" id="password" name="password" required><br>
@@ -30,8 +40,7 @@
             <button type="submit" class="button1">Iniciar sesión</button>
         </form>
 
-        <div class="BotonesIni">
-        <button class="button1">iniciar sesion</button>
+
 
 
         <a href="{{ route('registro.create') }}">

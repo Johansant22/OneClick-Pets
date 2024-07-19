@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Tercero;
-use App\Models\TipoTercero;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
+use PhpParser\Node\Stmt\Else_;
 
 class InicioSesionController extends Controller
 {
@@ -22,54 +20,43 @@ class InicioSesionController extends Controller
     public function registro(Request $request)
     {
         // Validación de los datos
-        $request->validate([
-            'Nombre1' => 'required',
-            'Apellido1' => 'required',
-            'Direccion' => 'required',
-            'Num_identificacion' => 'required',
-            'Correo' => 'required|email',
-            'Telefono' => 'required',
-            'contrasena' => 'required|min:6|confirmed',
-            'terms' => 'accepted',
-        ]);
+
 
         // Crear un nuevo registro de Tercero en la base de datos
-        $tercero = new Tercero();
-        $tercero->Nombre1 = $request->Nombre1;
-        $tercero->Nombre2 = $request->Nombre2;
-        $tercero->Apellido1 = $request->Apellido1;
-        $tercero->Apellido2 = $request->Apellido2;
-        $tercero->Direccion = $request->Direccion;
-        $tercero->Num_identificacion = $request->Num_identificacion;
-        $tercero->Correo = $request->Correo;
-        $tercero->Telefono = $request->Telefono;
-        $tercero->contrasena = Hash::make($request->contrasena);
+        $user = new User();
 
-        $tercero->save();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->Direccion = $request->Direccion;
+        $user->Num_identificacion = $request->Num_identificacion;
+        $user->Telefono = $request->Telefono;
+        $user->password = Hash::make($request->password);
+
+        $user->save();
 
         // Iniciar sesión automáticamente después del registro
-        Auth::login($tercero);
+        Auth::login($user);
 
-        return redirect(route('prueba-log'));
+        return redirect(route('privada'));
     }
 
-    public function login(Request $request)
-    {
-        // Validación de los datos
+    public function login(Request $request){
+        //Validación de credenciales
         $credentials = $request->validate([
-            'Correo' => 'required|email',
-            'contrasena' => 'required|min:6',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ]);
+        // Recordar el usuario
+        $remember = $request->has('remember');
 
-        // Intentar autenticar al usuario
-        if (Auth::attempt(['Correo' => $credentials['Correo'], 'password' => $credentials['contrasena']])) {
+        if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-            return redirect()->intended('privada');
+            return redirect()->intended(route('inicio.index'));
+        } else {
+            return back()->withErrors([
+                'email' => 'El correo o la contraseña no son correctos.',
+            ])->onlyInput('email');
         }
-
-        return back()->withErrors([
-            'Correo' => 'Las credenciales proporcionadas no coinciden con nuestros registros.',
-        ])->onlyInput('Correo');
     }
 
     public function logout(Request $request)

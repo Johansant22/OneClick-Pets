@@ -14,7 +14,7 @@ class Empresa extends Model
     //Relaciones a nivel de modelo 1:M
     //Con: tercero
 
-    public function tercero() {
-        return $this->hasMany('App\Models\Tercero');
+    public function user() {
+        return $this->hasMany('App\Models\User');
     }
 }

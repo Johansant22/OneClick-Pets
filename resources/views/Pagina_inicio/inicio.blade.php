@@ -9,7 +9,6 @@
 
 </head>
 <body>
-
     <header>
         <img src="images/Logo.png" alt="Logo OneClick Pets" class="logo-header">
 
@@ -18,13 +17,20 @@
                 <!-- Ícono de perfil con las iniciales del usuario -->
                 <img src="{{ $gravatarUrl }}" alt="perfil" class="perfil">
             @else
-            <!-- Ícono de perfil genérico, el cual me lleva a formulario registro -->
+                <!-- Ícono de perfil genérico, el cual me lleva a formulario registro -->
                 <a href="{{ route('formulario-iniciar-sesion') }}">
                     <img src="images/perfil.png" alt="perfil" class="perfil">
                 </a>
             @endauth
-            <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
-            <img src="images/ajustes.png" alt="ajustes" class="ajustes">
+            <a href="{{ route() }}">
+                <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
+            </a>
+
+
+            <a href="{{ route('perfil') }}">
+                <img src="images/ajustes.png" alt="ajustes" class="ajustes">
+            </a>
+
         </div>
 
         <div class="b11">
@@ -35,13 +41,13 @@
             <ul>
                 <li><a href="{{ route('catalogo') }}">Catálogo</a></li>
                 <li><a href="#">Categoría</a></li>
-                <li><a href="#">Compras</a></li>
-                <li><a href="#">Vender</a></li>
-                <li><a href="#">Ofertas</a></li>
+                <li><a href="{{route('ofertas')}}">Ofertas</a></li>
                 @auth
+                    <li><a href="#">Compras</a></li>
+                    <li><a href="#">Vender</a></li>
                     <li><a href="#">Historial</a></li>
                     <li><a href="#">Mis Favoritos</a></li>
-                    <li><a href="#">Ayuda/PQRS</a></li>
+                    <li><a href="{{ route('ayuda') }}">Ayuda/PQRS</a></li>
                 @endauth
             </ul>
         </nav>
@@ -50,8 +56,6 @@
     <div id="contenedor_imagen_inicio">
         <img src="images/inico.jpg" class="img-inicio">
     </div>
-
-
 
     <footer>
         <div class="pie-pag">
@@ -73,6 +77,6 @@
             </a>
         </div>
     </footer>
-
 </body>
+
 </html>

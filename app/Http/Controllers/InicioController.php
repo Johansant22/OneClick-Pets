@@ -18,6 +18,7 @@ class InicioController extends Controller
         return view('Pagina_inicio.inicio', compact('gravatarUrl'));
     }
 
+
    // public function index(){
      //   return view('RegistroUsuario.RegUsuario');
    // }
