@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Auth;
 class InicioController extends Controller
 {
     public function index(){
-        $gravatarUrl = null;
-
+        $gravatarUrl = null; //Muestra un icono predeterminao o precargado
+// se utiliza para verificar o autenticar el usuario
         if (Auth::check()){
             $initials = strtoupper(substr(Auth::user()->name, 0, 1));
             $gravatarUrl = "https://www.gravatar.com/avatar/" . md5(Auth::user()->email) . "?d=retro&s=200";

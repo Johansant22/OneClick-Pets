@@ -9,6 +9,12 @@ class Empresa extends Model
 {
     use HasFactory;
     protected $table = 'empresas';
+    protected $fillable = [
+        'razon_social',
+        'nit',
+        'objeto_social',
+        'user_id',
+    ];
     protected $guarded = [];
 
     //Relaciones a nivel de modelo 1:M
