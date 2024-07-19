@@ -22,7 +22,7 @@
                     <img src="images/perfil.png" alt="perfil" class="perfil">
                 </a>
             @endauth
-            <a href="{{ route() }}">
+            <a href="{{ route('carrito-compras') }}">
                 <img src="images/carritocompras.png" alt="carritocompras" class="carrito">
             </a>
 

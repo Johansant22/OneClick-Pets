@@ -37,7 +37,7 @@ class InicioSesionController extends Controller
         // Iniciar sesión automáticamente después del registro
         Auth::login($user);
 
-        return redirect(route('privada'));
+        return redirect(route('catalogo'));
     }
 
     public function login(Request $request){
